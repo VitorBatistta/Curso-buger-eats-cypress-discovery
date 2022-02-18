@@ -24,5 +24,5 @@ jobs:
           group: 'UI - Chrome'
           spec: cypress/integration/*
         env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_RECORD_KEY: ${{npx cypress run --record --key 4d4bc9fc-5367-41ea-b8b9-f6da71b819f5 }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
