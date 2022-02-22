@@ -6,7 +6,9 @@ jobs:
 
   ui-chrome-tests:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node14.17.0-chrome88-ff89
+    container:
+      image: cypress/browsers:node14.17.0-chrome88-ff89
+      options: --user 1001
     strategy:
       fail-fast: false
     steps:
@@ -24,5 +26,5 @@ jobs:
           group: 'UI - Chrome'
           spec: cypress/integration/*
         env:
-          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
